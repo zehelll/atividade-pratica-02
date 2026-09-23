@@ -5,9 +5,10 @@ import { Solicitacao } from './solicitacao.entity';
 import { SolicitacoesController } from './solicitacoes.controller';
 import { SolicitacoesService } from './solicitacoes.service';
 import { Auditoria } from '../auditoria/auditoria.entity';
+import { CentroCusto } from '../centros-custo.entity';
 
 @Module({
-  imports: [AuthModule, TypeOrmModule.forFeature([Solicitacao, Auditoria])],
+  imports: [AuthModule, TypeOrmModule.forFeature([Solicitacao, Auditoria, CentroCusto])],
   controllers: [SolicitacoesController],
   providers: [SolicitacoesService],
 })

@@ -1,4 +1,4 @@
-import { IsString, MaxLength, MinLength, IsIn } from 'class-validator';
+import { IsString, MaxLength, MinLength, IsIn, IsNumber, Min } from 'class-validator';
 import type { NivelPrioridade } from '../solicitacao.entity';
 
 export class CriarSolicitacaoDto {
@@ -15,4 +15,8 @@ export class CriarSolicitacaoDto {
   @IsString()
   @IsIn(['normal', 'urgente'])
   prioridade!: NivelPrioridade;
+
+  @IsNumber({ maxDecimalPlaces: 2 })
+  @Min(0)
+  valorEstimado!: number;
 }

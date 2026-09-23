@@ -38,7 +38,12 @@ buscarPorId(@Param('id', ParseIntPipe) id: number) {
 @Roles('gestor')
 @Patch(':id/aprovar')
 aprovar(@Param('id', ParseIntPipe) id: number, @Body() dto:AprovarSolicitacaoDto, @Req() request: RequisicaoAutenticada) {
-  return this.solicitacoesService.aprovar(id, dto.versao, request.user.id);
+  return this.solicitacoesService.aprovar(
+    id,
+    dto.versaoSolicitacao,
+    dto.versaoCentroCusto,
+    request.user.id,
+  );
 }
 
 @UseGuards(JwtAuthGuard, RolesGuard)

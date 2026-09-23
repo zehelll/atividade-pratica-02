@@ -21,6 +21,12 @@ export class Solicitacao {
   @Column({ type: 'varchar', length: 30 })
   centroCusto!: string;
 
+  @Column({ name: 'centro_custo_id', type: 'int' })
+  centroCustoId!: number;
+
+  @Column({ name: 'valor_estimado', type: 'numeric', precision: 14, scale: 2 })
+  valorEstimado!: string;
+
   @Column({ type: 'varchar', length: 10, default: 'normal' })
   prioridade!: NivelPrioridade;
 

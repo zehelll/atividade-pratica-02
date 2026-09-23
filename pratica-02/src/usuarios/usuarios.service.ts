@@ -20,8 +20,7 @@ export class UsuariosService {
       id: 1,
       nome: 'Ana Lima',
       email: 'ana@empresa.com',
-      senhaHash:
-        '$2b$12$.tXa1XI6bBVM91.zf6nuDuv5hKYDuIkH69yj.QBhJy.DoJYcce6Zy',
+      senhaHash: process.env.GESTOR_PASSWORD_HASH ?? '',
       papel: 'gestor',
       ativo: true,
     },
@@ -29,8 +28,7 @@ export class UsuariosService {
       id: 2,
       nome: 'Bruno Silva',
       email: 'bruno@empresa.com',
-      senhaHash:
-        '$2b$12$.tXa1XI6bBVM91.zf6nuDuv5hKYDuIkH69yj.QBhJy.DoJYcce6Zy',
+      senhaHash: process.env.SOLICITANTE_PASSWORD_HASH ?? '',
       papel: 'solicitante',
       ativo: true,
     },

@@ -3,6 +3,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { SolicitacoesModule } from './solicitacoes/solicitacoes.module';
+import { CentroCusto } from './centros-custo.entity';
+import { CentrosCustoController } from './centros-custo.controller';
 
 @Module({
   imports: [
@@ -23,7 +25,9 @@ import { SolicitacoesModule } from './solicitacoes/solicitacoes.module';
       }),
     }),
     AuthModule,
+    TypeOrmModule.forFeature([CentroCusto]),
     SolicitacoesModule,
   ],
+  controllers: [CentrosCustoController],
 })
 export class AppModule {}
